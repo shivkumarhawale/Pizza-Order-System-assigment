@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Pizza_Order_System.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pizza-Order-System.Application.Contract\Pizza-Order-System.Application.Contract.csproj" />
+    <ProjectReference Include="..\Pizza-Order-System.Persistence\Pizza-Order-System.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
