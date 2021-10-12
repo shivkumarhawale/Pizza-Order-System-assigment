@@ -180,6 +180,24 @@ namespace Pizza_Order_System.Persistence.Repositories
                         }
                     }
             });
+
+            pizzas.Add(new Pizza
+            {
+                Id = 99,
+                Name = "Custom Pizza",
+                Description = "Custom Pizza for vegitarians",
+                Price = 100,
+                ImageUrl = "",
+                CategoriesId = 1,
+                Ingredients = new List<PizzaIngredients>()
+                    {
+                        new PizzaIngredients()
+                        {
+                            IngredientId = 1,
+                            PizzaId = 1
+                        }
+                    }
+            });
         }
         public Task<IEnumerable<Pizza>> GetPizzasAsync()
         {
@@ -232,12 +250,12 @@ namespace Pizza_Order_System.Persistence.Repositories
              new Size() {
                    Id = 2,
                 Name ="Medium",
-                Multiplier=1.25m
+                Multiplier=2m
              },
              new Size() {
                   Id = 3,
                 Name ="Large",
-                Multiplier=1.75m
+                Multiplier=3m
              }
             };
             return Task.FromResult(sizes.AsEnumerable());

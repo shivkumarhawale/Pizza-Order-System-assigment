@@ -36,6 +36,14 @@ namespace Pizza_Order_System.Controllers
             return result;
         }
 
+        [HttpGet]
+        [Route("{ingredientId}")]
+        public async Task<Ingredients> GetIngredientById([FromRoute] int ingredientId)
+        {
+            var result = await _ingredientRepository.GetIngredientsByIdAsync(ingredientId);
+            return result;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -53,7 +61,7 @@ namespace Pizza_Order_System.Controllers
         /// <param name="typeId"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("{typeId}")]
+        [Route("type/{typeId}")]
         public async Task<IEnumerable<Ingredients>> GetIngredientType([FromRoute] int typeId)
         {
             return await  _ingredientRepository.GetIngredientsByTypeIdAsync(typeId);

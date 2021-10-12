@@ -47,6 +47,27 @@ namespace Pizza_Order_System.Application
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<Ingredients> GetIngredientsByIdAsync(int id)
+        {
+            if (id == 0)
+                throw new ArgumentNullException("ingredientId can not be zero");
+
+            return (from ingredient in await _seedDataRepository.GetAllIngredientsAsync()
+                    where ingredient.Id == id
+                    select new Contract.Ingredients()
+                    {
+                        Id = ingredient.Id,
+                        Name = ingredient.Name,
+                        Price = ingredient.Price
+
+                    }).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <returns></returns>
         public async Task<IEnumerable<Ingredients>> GetIngredientsByTypeIdAsync(int typeId)
         {

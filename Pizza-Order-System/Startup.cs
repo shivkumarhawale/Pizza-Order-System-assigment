@@ -64,7 +64,12 @@ namespace Pizza_Order_System
                 app.UseDeveloperExceptionPage();
             }
 
-            // app.UseHttpsRedirection();
+            app.UseCors(x => x
+           .AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader());
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 

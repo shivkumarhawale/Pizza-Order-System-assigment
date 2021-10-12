@@ -18,6 +18,13 @@ namespace Pizza_Order_System.Application
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<Ingredients> GetIngredientsByIdAsync(int id);
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="typeId"></param>
         /// <returns></returns>
         Task<IEnumerable<Ingredients>> GetIngredientsByTypeIdAsync(int typeId);
